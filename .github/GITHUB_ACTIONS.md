@@ -64,7 +64,7 @@ You can see an example here:
   build_sqlserver:
     name: SQL Server
     needs: [ check_style, file_changes ]
-    runs-on: ubuntu-latest
+    runs-on: debezium-ubuntu-latest
     if: >
       ${{ needs.file_changes.outputs.common-changed == 'true' || 
       needs.file_changes.outputs.sqlserver-changed == 'true' || 

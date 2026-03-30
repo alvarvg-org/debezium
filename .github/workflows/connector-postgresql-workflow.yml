@@ -19,7 +19,7 @@ jobs:
       matrix:
         profile: [ "assembly,postgres-14", "assembly,postgres-18,pgoutput-decoder" ]
     name: PostgreSQL - ${{ matrix.profile }}
-    runs-on: ubuntu-latest
+    runs-on: debezium-ubuntu-latest
 
     steps:
       - name: Checkout

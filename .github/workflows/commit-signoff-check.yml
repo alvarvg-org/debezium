@@ -10,7 +10,7 @@ jobs:
   # Will add/remove comments as necessary based on the current status of the pull request.
   check-signed-commits:
     name: Check signed commits
-    runs-on: ubuntu-latest
+    runs-on: debezium-ubuntu-latest
     steps:
       - uses: debezium/dbz/.github/actions/check-dco@main
         with:
