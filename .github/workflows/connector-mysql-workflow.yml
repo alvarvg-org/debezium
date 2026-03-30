@@ -30,7 +30,7 @@ jobs:
           - profile: "mysql-ci-ssl"
             version-mysql-server: "8.4"
     name: MySQL ${{ matrix.version-mysql-server }} - ${{ matrix.profile }}
-    runs-on: debezium-ubuntu-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout

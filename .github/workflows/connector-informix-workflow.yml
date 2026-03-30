@@ -23,7 +23,7 @@ jobs:
       matrix:
         profile: [ "assembly,informix12", "assembly,informix14", "assembly,informix15" ]
     name: Informix - ${{ matrix.profile }}
-    runs-on: debezium-ubuntu-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout (Debezium Core)

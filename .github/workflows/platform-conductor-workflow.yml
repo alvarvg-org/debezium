@@ -14,7 +14,7 @@ on:
 jobs:
   build-platform-conductor:
     name: "Build Debezium Platform - Conductor"
-    runs-on: debezium-ubuntu-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Action (Core)

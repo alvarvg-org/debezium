@@ -20,7 +20,7 @@ jobs:
         # Runs JDBC sink tests based on specific target platforms concurrently
         test-tags: [ "it-mysql,e2e-mysql", "it-postgresql,e2e-postgresql", "it-sqlserver,e2e-sqlserver" ]
     name: JDBC - ${{ matrix.test-tags }}
-    runs-on: debezium-ubuntu-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout

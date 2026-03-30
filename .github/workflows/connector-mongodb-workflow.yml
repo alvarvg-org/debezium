@@ -19,7 +19,7 @@ jobs:
       matrix:
         server-version: [ "5.0", "8.0" ]
     name: MongoDB - ${{ matrix.server-version }}
-    runs-on: debezium-ubuntu-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout

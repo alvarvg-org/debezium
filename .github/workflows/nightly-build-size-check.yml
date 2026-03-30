@@ -17,7 +17,7 @@ jobs:
 
   build_cassandra:
     name: Cassandra
-    runs-on: debezium-ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Action (Core)
         uses: actions/checkout@v6
@@ -50,7 +50,7 @@ jobs:
 
   build_db2:
     name: Db2
-    runs-on: debezium-ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Action (Core)
         uses: actions/checkout@v6
@@ -83,7 +83,7 @@ jobs:
 
   build_ibmi:
     name: IBMi
-    runs-on: debezium-ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Action (Core)
         uses: actions/checkout@v6
@@ -116,7 +116,7 @@ jobs:
 
   build_ingres:
     name: Ingres
-    runs-on: debezium-ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Action (Core)
         uses: actions/checkout@v6
@@ -149,7 +149,7 @@ jobs:
 
   build_informix:
     name: Informix
-    runs-on: debezium-ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Action (Core)
         uses: actions/checkout@v6
@@ -182,7 +182,7 @@ jobs:
 
   build_vitess:
     name: Vitess
-    runs-on: debezium-ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Action (Core)
         uses: actions/checkout@v6
@@ -215,7 +215,7 @@ jobs:
 
   build_spanner:
     name: Spanner
-    runs-on: debezium-ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Action (Core)
         uses: actions/checkout@v6
@@ -248,7 +248,7 @@ jobs:
 
   build_cockroachdb:
     name: CockroachDB
-    runs-on: debezium-ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Action (Core)
         uses: actions/checkout@v6
@@ -281,7 +281,7 @@ jobs:
 
   build_server:
     name: "Debezium Server"
-    runs-on: debezium-ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Action (Core)
         uses: actions/checkout@v6
@@ -314,7 +314,7 @@ jobs:
 
   build_core:
     name: "Debezium Core"
-    runs-on: debezium-ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Action (Core)
         uses: actions/checkout@v6
@@ -349,7 +349,7 @@ jobs:
 
   build_storage:
     name: "Storage"
-    runs-on: debezium-ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Action
         uses: actions/checkout@v6
@@ -369,7 +369,7 @@ jobs:
 
   build_openlineage:
     name: "OpenLineage"
-    runs-on: debezium-ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Action
         uses: actions/checkout@v6
@@ -389,7 +389,7 @@ jobs:
 
   build_ai:
     name: "AI"
-    runs-on: debezium-ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Action
         uses: actions/checkout@v6
@@ -409,7 +409,7 @@ jobs:
 
   build_schema_generator:
     name: "Schema Generator"
-    runs-on: debezium-ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Action
         uses: actions/checkout@v6
@@ -429,7 +429,7 @@ jobs:
 
   build_testing:
     name: "Testing"
-    runs-on: debezium-ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Action
         uses: actions/checkout@v6
@@ -449,7 +449,7 @@ jobs:
 
   build_mysql:
     name: "MySQL"
-    runs-on: debezium-ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Action
         uses: actions/checkout@v6
@@ -469,7 +469,7 @@ jobs:
 
   build_postgres:
     name: "PostgreSQL"
-    runs-on: debezium-ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Action
         uses: actions/checkout@v6
@@ -489,7 +489,7 @@ jobs:
 
   build_oracle:
     name: "Oracle"
-    runs-on: debezium-ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Action
         uses: actions/checkout@v6
@@ -509,7 +509,7 @@ jobs:
 
   build_sqlserver:
     name: "SQL Server"
-    runs-on: debezium-ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Action
         uses: actions/checkout@v6
@@ -529,7 +529,7 @@ jobs:
 
   build_mongodb:
     name: "MongoDB"
-    runs-on: debezium-ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Action
         uses: actions/checkout@v6
@@ -549,7 +549,7 @@ jobs:
 
   build_mariadb:
     name: "MariaDB"
-    runs-on: debezium-ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Action
         uses: actions/checkout@v6
@@ -569,7 +569,7 @@ jobs:
 
   build_jdbc:
     name: "JDBC"
-    runs-on: debezium-ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Action
         uses: actions/checkout@v6
@@ -590,7 +590,7 @@ jobs:
   check-size:
     name: "Check Artifact Size"
     needs: [build_cassandra, build_db2, build_ibmi, build_ingres, build_informix, build_vitess, build_spanner, build_cockroachdb, build_server, build_core, build_storage, build_openlineage, build_ai, build_schema_generator, build_testing, build_mysql, build_postgres, build_oracle, build_sqlserver, build_mongodb, build_mariadb, build_jdbc]
-    runs-on: debezium-ubuntu-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Download Core artifacts

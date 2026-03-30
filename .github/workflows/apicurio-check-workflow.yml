@@ -10,7 +10,7 @@ on:
 jobs:
   mysql-apicurio:
     name: MySQL - Apicurio
-    runs-on: debezium-ubuntu-latest
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: true
       matrix:
@@ -28,7 +28,7 @@ jobs:
 
   postgresql-apicurio:
     name: PostgreSQL - Apicurio
-    runs-on: debezium-ubuntu-latest
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: true
       matrix:
@@ -45,7 +45,7 @@ jobs:
 
   mongodb-apicurio:
     name: MongoDB - Apicurio
-    runs-on: debezium-ubuntu-latest
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: true
       matrix:
