@@ -437,6 +437,8 @@ public class MySqlConnectorConfig extends BinlogConnectorConfig {
 
         @Override
         public boolean preventsTableLocks() {
+            LOGGER.info("Snapshot locking mode '{}' prevents table locks: {}", snapshotLockingMode.getValue(),
+                    snapshotLockingMode.preventsTableLocks());
             return snapshotLockingMode.preventsTableLocks();
         }
 
