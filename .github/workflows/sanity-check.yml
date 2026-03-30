@@ -10,11 +10,12 @@ on:
       - 2.*
       - 3.*
       - 4.*
+  workflow_dispatch:
 
 jobs:
   build:
     name: Commit message
-    runs-on: ubuntu-latest
+    runs-on: debezium-ubuntu-latest
     steps:
       - name: Commit messages in format debezium/dbz#xxx
         id: check

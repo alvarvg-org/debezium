@@ -10,9 +10,9 @@ on:
       - 2.*
       - 3.*
       - 4.*
-jobs:
+  workflow_dispatch:jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: debezium-ubuntu-latest
     steps:
       - name: Check if octocat commits are present?
         id: octocat

@@ -39,13 +39,14 @@ on:
         value: ${{ jobs.file_changes.outputs.storage-only-changed }}
       extensions-changed:
         value: ${{ jobs.file_changes.outputs.extensions-changed }}
+  workflow_dispatch:
 
 jobs:
   # This job is responsible for inspecting the changes in the repository and setting specific output variables
   # that subsequent jobs can use to determine whether a particular job should be skipped or included.
   file_changes:
     name: "Detect Repository changes"
-    runs-on: ubuntu-latest
+    runs-on: debezium-ubuntu-latest
     outputs:
       common-changed: ${{ steps.changed-files-common.outputs.any_changed }}
       mongodb-changed: ${{ steps.changed-files-mongodb.outputs.any_changed }}

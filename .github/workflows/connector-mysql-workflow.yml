@@ -10,6 +10,13 @@ on:
         description: "The maximum number of workers to consume, by default uses all available."
         required: false
         type: number
+  workflow_dispatch:
+    inputs:
+      maven-cache-key:
+        description: "The cache key to use to restore/save build caches."
+        required: false
+        type: string
+        default: ""
 
 jobs:
   build-mysql:
@@ -30,7 +37,7 @@ jobs:
           - profile: "mysql-ci-ssl"
             version-mysql-server: "8.4"
     name: MySQL ${{ matrix.version-mysql-server }} - ${{ matrix.profile }}
-    runs-on: ubuntu-latest
+    runs-on: debezium-ubuntu-latest
 
     steps:
       - name: Checkout

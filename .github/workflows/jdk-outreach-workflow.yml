@@ -8,6 +8,7 @@ on:
       - '.github/workflows/jdk-outreach-workflow.yml'
   schedule:
     - cron: 0 22 * * *
+  workflow_dispatch:
 
 env:
   MAVEN_FULL_BUILD_PROJECTS: "\\!debezium-microbenchmark-oracle,\\!debezium-connector-oracle"
@@ -15,7 +16,7 @@ env:
 
 jobs:
   sqlserver:
-    runs-on: ubuntu-latest
+    runs-on: debezium-ubuntu-latest
     strategy:
       matrix:
         feature: [ { release: ga, args: '-DskipITs=true -DskipTests=true', extra: '' }, { release: ea, args: '', extra: '-Dnet.bytebuddy.experimental=true' } ]
@@ -49,7 +50,7 @@ jobs:
           -DfailFlakyTests=false
           ${{ matrix.feature.extra }}
   mysql:
-    runs-on: ubuntu-latest
+    runs-on: debezium-ubuntu-latest
     strategy:
       matrix:
         feature: [ { release: ga, args: '-DskipITs=true -DskipTests=true', extra: '' }, { release: ea, args: '', extra: '-Dnet.bytebuddy.experimental=true' } ]
@@ -83,7 +84,7 @@ jobs:
           -DfailFlakyTests=false
           ${{ matrix.feature.extra }}
   postgres-pgoutput:
-    runs-on: ubuntu-latest
+    runs-on: debezium-ubuntu-latest
     strategy:
       matrix:
         feature: [ { release: ga, args: '-DskipITs=true -DskipTests=true', extra: '' }, { release: ea, args: '', extra: '-Dnet.bytebuddy.experimental=true' } ]
@@ -118,7 +119,7 @@ jobs:
           -DfailFlakyTests=false
           ${{ matrix.feature.extra }}
   mongodb:
-    runs-on: ubuntu-latest
+    runs-on: debezium-ubuntu-latest
     strategy:
       matrix:
         feature: [ { release: ga, args: '-DskipITs=true -DskipTests=true', extra: '' }, { release: ea, args: '', extra: '-Dnet.bytebuddy.experimental=true' } ]
@@ -153,7 +154,7 @@ jobs:
           -DfailFlakyTests=false
           ${{ matrix.feature.extra }}
   oracle:
-    runs-on: ubuntu-latest
+    runs-on: debezium-ubuntu-latest
     strategy:
       matrix:
         feature: [ { release: ga, args: '-DskipITs=true -DskipTests=true', extra: '' }, { release: ea, args: '', extra: '-Dnet.bytebuddy.experimental=true' } ]
@@ -187,7 +188,7 @@ jobs:
           -DfailFlakyTests=false
           ${{ matrix.feature.extra }}
   cassandra:
-    runs-on: ubuntu-latest
+    runs-on: debezium-ubuntu-latest
     strategy:
       matrix:
         feature: [ { release: ga, args: '-DskipITs=true -DskipTests=true', extra: '' }, { release: ea, args: '', extra: '-Dnet.bytebuddy.experimental=true' } ]
@@ -241,7 +242,7 @@ jobs:
           -Dmaven.wagon.httpconnectionManager.ttlSeconds=120 
           ${{ matrix.feature.extra }}
   db2:
-    runs-on: ubuntu-latest
+    runs-on: debezium-ubuntu-latest
     strategy:
       matrix:
         feature: [ { release: ga, args: '-DskipITs=true -DskipTests=true', extra: '' }, { release: ea, args: '', extra: '-Dnet.bytebuddy.experimental=true' } ]
@@ -294,7 +295,7 @@ jobs:
           -DfailFlakyTests=false
           ${{ matrix.feature.extra }}
   spanner:
-    runs-on: ubuntu-latest
+    runs-on: debezium-ubuntu-latest
     strategy:
       matrix:
         feature: [ { release: ga, args: '-DskipITs=true -DskipTests=true', extra: '' }, { release: ea, args: '', extra: '-Dnet.bytebuddy.experimental=true' } ]
@@ -344,7 +345,7 @@ jobs:
           -Dmaven.wagon.httpconnectionManager.ttlSeconds=120 
           ${{ matrix.feature.extra }}
   vitess:
-    runs-on: ubuntu-latest
+    runs-on: debezium-ubuntu-latest
     strategy:
       matrix:
         feature: [ { release: ga, args: '-DskipITs=true -DskipTests=true', extra: '' }, { release: ea, args: '', extra: '-Dnet.bytebuddy.experimental=true' } ]
@@ -395,7 +396,7 @@ jobs:
           -Dmaven.wagon.httpconnectionManager.ttlSeconds=120 
           ${{ matrix.feature.extra }}
   cockroachdb:
-    runs-on: ubuntu-latest
+    runs-on: debezium-ubuntu-latest
     strategy:
       matrix:
         feature: [ { release: ga, args: '-DskipITs=true -DskipTests=true', extra: '' }, { release: ea, args: '', extra: '-Dnet.bytebuddy.experimental=true' } ]
@@ -446,7 +447,7 @@ jobs:
           -Dmaven.wagon.httpconnectionManager.ttlSeconds=120 
           ${{ matrix.feature.extra }}
   informix:
-    runs-on: ubuntu-latest
+    runs-on: debezium-ubuntu-latest
     strategy:
       matrix:
         feature: [ { release: ga, args: '-DskipITs=true -DskipTests=true', extra: '' }, { release: ea, args: '', extra: '-Dnet.bytebuddy.experimental=true' } ]
@@ -499,7 +500,7 @@ jobs:
           -DfailFlakyTests=false
           ${{ matrix.feature.extra }}
   ibmi:
-    runs-on: ubuntu-latest
+    runs-on: debezium-ubuntu-latest
     strategy:
       matrix:
         feature: [ { release: ga, args: '-DskipITs=true -DskipTests=true', extra: '' }, { release: ea, args: '', extra: '-Dnet.bytebuddy.experimental=true' } ]
@@ -553,7 +554,7 @@ jobs:
           -DskipITs
           ${{ matrix.feature.extra }}
   ingres:
-    runs-on: ubuntu-latest
+    runs-on: debezium-ubuntu-latest
     strategy:
       matrix:
         feature: [ { release: ga, args: '-DskipTests=true', extra: '' }, { release: ea, args: '', extra: '-Dnet.bytebuddy.experimental=true' } ]
@@ -606,7 +607,7 @@ jobs:
           -DfailFlakyTests=false
           ${{ matrix.feature.extra }}
   quarkus:
-    runs-on: ubuntu-latest
+    runs-on: debezium-ubuntu-latest
     strategy:
       matrix:
         feature: [ { release: ga, args: '-DskipITs=true -DskipTests=true', extra: '' }, { release: ea, args: '', extra: '-Dnet.bytebuddy.experimental=true' } ]
@@ -669,7 +670,7 @@ jobs:
           -Dmaven.wagon.httpconnectionManager.ttlSeconds=120 
           ${{ matrix.feature.extra }}
   testing:
-    runs-on: ubuntu-latest
+    runs-on: debezium-ubuntu-latest
     strategy:
       matrix:
         feature: [ { release: ga, args: '-DskipITs=true -DskipTests=true', extra: '' }, { release: ea, args: '', extra: '-Dnet.bytebuddy.experimental=true' } ]
@@ -703,7 +704,7 @@ jobs:
           -DfailFlakyTests=false
           ${{ matrix.feature.extra }}
   server:
-    runs-on: ubuntu-latest
+    runs-on: debezium-ubuntu-latest
     strategy:
       matrix:
         feature: [ { release: ga, args: '-DskipITs=true -DskipTests=true', extra: '' }, { release: ea, args: '', extra: '-Dnet.bytebuddy.experimental=true' } ]

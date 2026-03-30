@@ -6,11 +6,18 @@ on:
         description: "The cache key to use to restore/save build caches."
         required: true
         type: string
+  workflow_dispatch:
+    inputs:
+      maven-cache-key:
+        description: "The cache key to use to restore/save build caches."
+        required: false
+        type: string
+        default: ""
 
 jobs:
   mysql-apicurio:
     name: MySQL - Apicurio
-    runs-on: ubuntu-latest
+    runs-on: debezium-ubuntu-latest
     strategy:
       fail-fast: true
       matrix:
@@ -28,7 +35,7 @@ jobs:
 
   postgresql-apicurio:
     name: PostgreSQL - Apicurio
-    runs-on: ubuntu-latest
+    runs-on: debezium-ubuntu-latest
     strategy:
       fail-fast: true
       matrix:
@@ -45,7 +52,7 @@ jobs:
 
   mongodb-apicurio:
     name: MongoDB - Apicurio
-    runs-on: ubuntu-latest
+    runs-on: debezium-ubuntu-latest
     strategy:
       fail-fast: true
       matrix:

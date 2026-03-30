@@ -10,6 +10,13 @@ on:
         description: "The maximum number of workers to consume, by default uses all available."
         required: false
         type: number
+  workflow_dispatch:
+    inputs:
+      maven-cache-key:
+        description: "The cache key to use to restore/save build caches."
+        required: false
+        type: string
+        default: ""
 
 jobs:
   build-posgresql:
@@ -19,7 +26,7 @@ jobs:
       matrix:
         profile: [ "assembly,postgres-14", "assembly,postgres-18,pgoutput-decoder" ]
     name: PostgreSQL - ${{ matrix.profile }}
-    runs-on: ubuntu-latest
+    runs-on: debezium-ubuntu-latest
 
     steps:
       - name: Checkout

@@ -10,6 +10,13 @@ on:
         description: "The maximum number of workers to consume, by default uses all available."
         required: false
         type: number
+  workflow_dispatch:
+    inputs:
+      maven-cache-key:
+        description: "The cache key to use to restore/save build caches."
+        required: false
+        type: string
+        default: ""
 
 jobs:
   build-jdbc:
@@ -20,7 +27,7 @@ jobs:
         # Runs JDBC sink tests based on specific target platforms concurrently
         test-tags: [ "it-mysql,e2e-mysql", "it-postgresql,e2e-postgresql", "it-sqlserver,e2e-sqlserver" ]
     name: JDBC - ${{ matrix.test-tags }}
-    runs-on: ubuntu-latest
+    runs-on: debezium-ubuntu-latest
 
     steps:
       - name: Checkout

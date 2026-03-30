@@ -12,10 +12,11 @@ on:
       - 'documentation/**'
   schedule:
     - cron: '0 1 * * *'
+  workflow_dispatch:
 
 jobs:
   build-deploy:
-    runs-on: ubuntu-latest
+    runs-on: debezium-ubuntu-latest
     steps:
       - name: Repository Dispatch
         uses: peter-evans/repository-dispatch@v4

@@ -11,9 +11,10 @@ on:
       - 3.*
       - 4.*
     types: [ opened ]
+  workflow_dispatch:
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: debezium-ubuntu-latest
     steps:
       # Checkout so that this contributor check passes if the contributor details are part of the pull request
       # If we don't do this, then we are only
