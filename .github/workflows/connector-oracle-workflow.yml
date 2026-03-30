@@ -19,7 +19,7 @@ jobs:
       matrix:
         profile: [ 'oracle-tests', 'oracle-infinispan-buffer,oracle-tests', 'oracle-ehcache,oracle-tests' ]
     name: Oracle - ${{ matrix.profile }}
-    runs-on: ubuntu-latest
+    runs-on: debezium-ubuntu-latest
 
     steps:
       - name: Checkout
